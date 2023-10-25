@@ -4,16 +4,16 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Pedido {
+public class Pedido<T extends ProdutoX> {
     
     private LocalDate data;
-    private List<ProdutoX> produtos;
+    private List<T> produtos;
     
     public Pedido() {
         produtos = new ArrayList<>();
     }
 
-    public Pedido(LocalDate data, List<ProdutoX> produtos) {
+    public Pedido(LocalDate data, List<T> produtos) {
         this.data = data;
         if (produtos == null)
             this.produtos = new ArrayList<>();
@@ -29,15 +29,15 @@ public class Pedido {
         this.data = data;
     }
 
-    public List<ProdutoX> getProdutos() {
+    public List<T> getProdutos() {
         return produtos;
     }
 
-    public void setProdutos(List<ProdutoX> produtos) {
+    public void setProdutos(List<T> produtos) {
         this.produtos = produtos;
     }
 
-    public boolean adicionar(ProdutoX produto) {
+    public boolean adicionar(T produto) {
         return produtos.add(produto);
     }
 

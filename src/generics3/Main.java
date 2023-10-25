@@ -5,7 +5,7 @@ import java.time.LocalDate;
 public class Main {
     public static void main(String[] args) {
         
-        Pedido pedido = new Pedido(LocalDate.now(), null);
+        Pedido<ProdutoX> pedido = new Pedido<>(LocalDate.now(), null);
 
         System.out.println(pedido);
 
